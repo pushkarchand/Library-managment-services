@@ -7,12 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BookingMS.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 
 namespace BookingMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowOrigin")] 
+	[EnableCors("AllowOrigin")]
     public class BooksController : ControllerBase
     {
         private readonly Library_DbContext _context;
