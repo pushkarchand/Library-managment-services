@@ -12,6 +12,7 @@ namespace BookingMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")] 
     public class BooksController : ControllerBase
     {
         private readonly Library_DbContext _context;

@@ -12,6 +12,7 @@ namespace OrderMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")] 
     public class OrdersController : ControllerBase
     {
         private readonly Library_DbContext _context;

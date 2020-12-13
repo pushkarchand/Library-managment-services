@@ -11,6 +11,7 @@ namespace User.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")] 
     public class UsersController : ControllerBase
     {
         private readonly Library_DbContext _context;
