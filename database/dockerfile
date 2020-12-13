@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/mssql/server:2019-latest
+
+ENV ACCEPT_EULA=Y
+
+ENV SA_PASSWORD=Ytrewq@321
+
+ENV MSSQL_PID=Express 
+
+COPY Library.bak /var/opt/mssql/backup/
+
+#COPY restore.sh /var/opt/mssql/backup/
+
+#RUN chmod +x /var/opt/mssql/backup/restore.sh
+
+#ENTRYPOINT /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Ytrewq@321' -Q 'RESTORE DATABASE Library_Db FROM DISK = "/var/opt/mssql/backup/Library.bak" WITH MOVE "Library_Db" TO "/var/opt/mssql/data/Library_Db.mdf", MOVE "Library_Db_log" TO "/var/opt/mssql/data/Library_Db_log.ldf"'

@@ -1,0 +1,54 @@
+version: "3.2"
+services:
+  sql-server-db:
+    container_name: sql-server-db
+    build:
+      context: ./database
+    ports:
+      - "1433:1433"
+    networks:
+      - microservice
+  booking:
+    container_name: booking
+    build:
+      context: ./booking
+    ports:
+      - "44396:44396"
+    networks:
+      - microservice
+  loan:
+    container_name: loan
+    build:
+      context: ./loan
+    ports:
+      - "44373:44373"
+    networks:
+      - microservice
+  user:
+    container_name: user
+    build:
+      context: ./User
+    ports:
+      - "44316:44316"
+    networks:
+      - microservice
+  order:
+    container_name: order
+    build:
+      context: ./order
+    ports:
+      - "44358:44358"
+    networks:
+      - microservice
+  gateway:
+    container_name: gateway
+    build:
+      context: ./gateway
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - microservice
+networks:
+  microservice:
+    driver: bridge
