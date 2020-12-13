@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LoanMS.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 
 namespace LoanMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class LoansController : ControllerBase
     {
         private readonly Library_DbContext _context;

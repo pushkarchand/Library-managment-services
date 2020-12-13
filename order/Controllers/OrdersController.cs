@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OrderMS.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 
 namespace OrderMS.Controllers
 {
